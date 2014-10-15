@@ -1,11 +1,14 @@
 # bcrypt-speed
 
-Determine the maximum number of rounds on the current machine for different
-bcrypt implementations using a fixed amount of time (and thus having an assured
-user experience).
+Determine the maximum level of security for some hardware given the maximum time
+that can be spent on login.
 
-This package should be run on the target production server to determine the
-maximum level of security (number of rounds) given a constant amount of time.
+Using a fixed amount of time (and thus having an assured user experience) this
+module runs a couple of different bcrypt implementations so that the optimum
+number of rounds can be found given some hardware and the time that a login 
+may take (i.e. Apple uses 80ms for unlocking [*](http://www.darthnull.org/2014/10/06/ios-encryption)).
+
+Note: this package should be run on the target production hardware to get a good estimate.
 
 The following packages are currently tested:
 * [bcrypt-nodejs](https://www.npmjs.org/package/bcrypt-nodejs) (pure js, no deps)
@@ -17,9 +20,10 @@ Any suggestions on other bcrypt implementations are welcome.
 
 ## Usage
 
-    $ node bcrypt-speed.js [time]
+    $ node bcrypt-speed.js [maxtime]
 
-A time is optional and defaults to 100ms.
+A maxtime is optional and defaults to 100ms. This should be the maximum time you
+want to let your users wait while you're verifying their password.
 
 ## Example
 

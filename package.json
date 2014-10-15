@@ -7,14 +7,12 @@
     "url": "https://github.com/timkuijsten"
   },
   "license": "MIT",
-  "description": "Compare different bcrypt implementations on round speed for a fixed max duration",
+  "description": "Determine how many rounds can be calculated for a given maximum amount of time",
   "keywords": [
     "bcrypt",
-    "implemantation",
     "speed",
     "rounds",
-    "time",
-    "comparison"
+    "time"
   ],
   "bugs": "https://github.com/timkuijsten/node-bcrypt-speed/issues",
   "dependencies": {
