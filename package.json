@@ -1,0 +1,34 @@
+{
+  "name": "bcrypt-speed",
+  "version": "0.0.1",
+  "author": {
+    "name": "Tim Kuijsten",
+    "email": "tim@netsend.nl",
+    "url": "https://github.com/timkuijsten"
+  },
+  "license": "MIT",
+  "description": "Compare different bcrypt implementations on round speed for a fixed max duration",
+  "keywords": [
+    "bcrypt",
+    "implemantation",
+    "speed",
+    "rounds",
+    "time",
+    "comparison"
+  ],
+  "bugs": "https://github.com/timkuijsten/node-bcrypt-speed/issues",
+  "dependencies": {
+    "bcrypt-nodejs": ">=0.0.3",
+    "twin-bcrypt": ">=0.2.3",
+    "bcryptjs": ">=2.0.2",
+    "bcrypt": ">=0.8.0"
+  },
+  "bin": "./bcrypt-speed.js",
+  "scripts": {
+    "start": "node bcrypt-speed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/timkuijsten/node-bcrypt-speed.git"
+  }
+}
