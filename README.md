@@ -1,9 +1,19 @@
 # bcrypt-speed
 
-Determine the maximum of rounds on the current machine for different bcrypt
-implementations using a fixed amount of time (and thus having an assured user
-experience). This package should be run a production server to determine the 
-optimum number of rounds for the bcrypt package that is used.
+Determine the maximum number of rounds on the current machine for different
+bcrypt implementations using a fixed amount of time (and thus having an assured
+user experience).
+
+This package should be run on the target production server to determine the
+maximum level of security (number of rounds) given a constant amount of time.
+
+The following packages are currently tested:
+* [bcrypt-nodejs](https://www.npmjs.org/package/bcrypt-nodejs) (pure js, no deps)
+* [twin-bcrypt](https://www.npmjs.org/package/twin-bcrypt) (pure js, no deps, asm.js)
+* [bcryptjs](https://www.npmjs.org/package/bcryptjs) (pure js, no deps)
+* [bcrypt](https://www.npmjs.org/package/bcrypt) (c++, has deps)
+
+Any suggestions on other bcrypt implementations are welcome.
 
 ## Usage
 
