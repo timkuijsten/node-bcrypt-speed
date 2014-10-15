@@ -1,13 +1,13 @@
 {
   "name": "bcrypt-speed",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "Tim Kuijsten",
     "email": "tim@netsend.nl",
     "url": "https://github.com/timkuijsten"
   },
   "license": "MIT",
-  "description": "Determine how many rounds can be calculated for a given maximum amount of time",
+  "description": "Determine how many rounds can be used for a given maximum amount of login time",
   "keywords": [
     "bcrypt",
     "speed",
