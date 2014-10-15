@@ -36,7 +36,7 @@ var start, duration, salt, hash, rounds;
 rounds = 3;
 
 console.log('\nbcrypt-nodejs (pure js, no deps)');
-console.log('round', '  ms');
+console.log('rounds', ' ms');
 
 do {
   rounds++;
@@ -53,7 +53,7 @@ do {
 rounds = 3;
 
 console.log('\ntwin-bcrypt (pure js, no deps, asm.js)');
-console.log('round', '  ms');
+console.log('rounds', ' ms');
 
 do {
   rounds++;
@@ -70,7 +70,7 @@ do {
 rounds = 3;
 
 console.log('\nbcryptjs (pure js, no deps)');
-console.log('round', '  ms');
+console.log('rounds', ' ms');
 
 do {
   rounds++;
@@ -87,7 +87,7 @@ do {
 rounds = 3;
 
 console.log('\nbcrypt (c++, has deps)');
-console.log('round', '  ms');
+console.log('rounds', ' ms');
 
 do {
   rounds++;

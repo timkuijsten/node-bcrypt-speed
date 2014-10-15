@@ -33,7 +33,7 @@ Example run on a 3 GHz core:
     test duration per number of rounds, up to 100ms
 
     bcrypt-nodejs (pure js, no deps)
-    round   ms
+    rounds  ms
       4      7
       5      8
       6     16
@@ -42,7 +42,7 @@ Example run on a 3 GHz core:
       9    107
 
     twin-bcrypt (pure js, no deps, asm.js)
-    round   ms
+    rounds  ms
       4     10
       5     16
       6     31
@@ -50,7 +50,7 @@ Example run on a 3 GHz core:
       8    110
 
     bcryptjs (pure js, no deps)
-    round   ms
+    rounds  ms
       4      7
       5      8
       6     18
@@ -59,7 +59,7 @@ Example run on a 3 GHz core:
       9    112
 
     bcrypt (c++, has deps)
-    round   ms
+    rounds  ms
       4      1
       5      2
       6      4
