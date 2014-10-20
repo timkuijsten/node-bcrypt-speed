@@ -1,6 +1,6 @@
 {
   "name": "bcrypt-speed",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": {
     "name": "Tim Kuijsten",
     "email": "tim@netsend.nl",
@@ -17,7 +17,7 @@
   "bugs": "https://github.com/timkuijsten/node-bcrypt-speed/issues",
   "dependencies": {
     "bcrypt-nodejs": ">=0.0.3",
-    "twin-bcrypt": ">=0.2.3",
+    "twin-bcrypt": ">=2.0.2",
     "bcryptjs": ">=2.0.2",
     "bcrypt": ">=0.8.0"
   },
