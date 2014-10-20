@@ -35,39 +35,41 @@ Example run on a 3 GHz core:
     bcrypt-nodejs (pure js, no deps)
     rounds  ms
       4      7
-      5      8
-      6     16
-      7     30
+      5      9
+      6     17
+      7     34
       8     57
-      9    107
+      9    114
 
     twin-bcrypt (pure js, no deps, asm.js)
     rounds  ms
-      4     10
-      5     16
-      6     31
-      7     53
-      8    110
+      4      7
+      5      7
+      6     13
+      7     24
+      8     49
+      9     97
+     10    186
 
     bcryptjs (pure js, no deps)
     rounds  ms
-      4      7
-      5      8
-      6     18
-      7     32
-      8     58
-      9    112
+      4      6
+      5      9
+      6     16
+      7     31
+      8     60
+      9    113
 
     bcrypt (c++, has deps)
     rounds  ms
       4      1
       5      2
       6      4
-      7      9
-      8     18
-      9     37
+      7     10
+      8     19
+      9     40
      10     75
-     11    144
+     11    153
 
 ## License
 
