@@ -25,75 +25,103 @@ var bcryptNodejs = require('bcrypt-nodejs');
 var twinBcrypt = require('twin-bcrypt');
 var bcryptjs = require('bcryptjs');
 var bcrypt = require('bcrypt');
+var async = require('async');
 
-var maxDuration = Number(process.argv[2]) || 100;
+var maxDuration = Number(process.argv[2]) || 500;
 console.log('test duration per number of rounds, up to ' + maxDuration + 'ms');
 
 var start, duration, salt, hash, rounds;
 
+var tests = [];
+
+tests.push(idle, testBcryptNodejs)
+tests.push(idle, testTwinBcrypt)
+tests.push(idle, testBcryptjs)
+if (!process.browser) tests.push(idle, testBcrypt)
+
+async.series(tests);
+
 /////////////////////////////////////////////////////////////////////
 // bcrypt-nodejs
-rounds = 3;
+function testBcryptNodejs(callback){
 
-console.log('\nbcrypt-nodejs (pure js, no deps)');
-console.log('rounds', ' ms');
+  rounds = 3;
 
-do {
-  rounds++;
-  salt = bcryptNodejs.genSaltSync(rounds);
-  start = new Date();
-  hash = bcryptNodejs.hashSync('somepass', salt);
-  duration = new Date() - start.getTime();
-  console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
-} while (duration < maxDuration);
+  console.log('\nbcrypt-nodejs (pure js, no deps)');
+  console.log('rounds', ' ms');
 
+  do {
+    rounds++;
+    salt = bcryptNodejs.genSaltSync(rounds);
+    start = new Date();
+    hash = bcryptNodejs.hashSync('somepass', salt);
+    duration = new Date() - start.getTime();
+    console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
+  } while (duration < maxDuration);
 
+  callback()
+}
 /////////////////////////////////////////////////////////////////////
 // twin-bcrypt
-rounds = 3;
+function testTwinBcrypt(callback){
 
-console.log('\ntwin-bcrypt (pure js, no deps, asm.js)');
-console.log('rounds', ' ms');
+  rounds = 3;
 
-do {
-  rounds++;
-  salt = twinBcrypt.genSalt(rounds);
-  start = new Date();
-  hash = twinBcrypt.hashSync('somepass', salt);
-  duration = new Date() - start.getTime();
-  console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
-} while (duration < maxDuration);
+  console.log('\ntwin-bcrypt (pure js, no deps, asm.js)');
+  console.log('rounds', ' ms');
 
+  do {
+    rounds++;
+    salt = twinBcrypt.genSalt(rounds);
+    start = new Date();
+    hash = twinBcrypt.hashSync('somepass', salt);
+    duration = new Date() - start.getTime();
+    console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
+  } while (duration < maxDuration);
 
+  callback()
+}
 /////////////////////////////////////////////////////////////////////
 // bcryptjs
-rounds = 3;
+function testBcryptjs(callback){
 
-console.log('\nbcryptjs (pure js, no deps)');
-console.log('rounds', ' ms');
+  rounds = 3;
 
-do {
-  rounds++;
-  salt = bcryptjs.genSaltSync(rounds);
-  start = new Date();
-  hash = bcryptjs.hashSync('somepass', salt);
-  duration = new Date() - start.getTime();
-  console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
-} while (duration < maxDuration);
+  console.log('\nbcryptjs (pure js, no deps)');
+  console.log('rounds', ' ms');
 
+  do {
+    rounds++;
+    salt = bcryptjs.genSaltSync(rounds);
+    start = new Date();
+    hash = bcryptjs.hashSync('somepass', salt);
+    duration = new Date() - start.getTime();
+    console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
+  } while (duration < maxDuration);
 
+  callback()
+}
 /////////////////////////////////////////////////////////////////////
 // bcrypt
-rounds = 3;
+function testBcrypt(callback){
 
-console.log('\nbcrypt (c++, has deps)');
-console.log('rounds', ' ms');
+  rounds = 3;
 
-do {
-  rounds++;
-  salt = bcrypt.genSaltSync(rounds);
-  start = new Date();
-  hash = bcrypt.hashSync('somepass', salt);
-  duration = new Date() - start.getTime();
-  console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
-} while (duration < maxDuration);
+  console.log('\nbcrypt (c++, has deps)');
+  console.log('rounds', ' ms');
+
+  do {
+    rounds++;
+    salt = bcrypt.genSaltSync(rounds);
+    start = new Date();
+    hash = bcrypt.hashSync('somepass', salt);
+    duration = new Date() - start.getTime();
+    console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
+  } while (duration < maxDuration);
+
+  callback()
+}
+
+function idle(callback) {
+  setTimeout(callback, 200)
+}
