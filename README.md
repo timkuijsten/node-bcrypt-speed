@@ -30,46 +30,56 @@ want to let your users wait while you're verifying their password.
 Example run on a 3 GHz core:
 
     $ node bcrypt-speed.js
-    test duration per number of rounds, up to 100ms
+    test duration per number of rounds, up to 500ms
 
     bcrypt-nodejs (pure js, no deps)
     rounds  ms
       4      7
       5      9
       6     17
-      7     34
-      8     57
-      9    114
+      7     33
+      8     58
+      9    112
+     10    219
+     11    440
+     12    873
 
     twin-bcrypt (pure js, no deps, asm.js)
     rounds  ms
-      4      7
-      5      7
-      6     13
-      7     24
+      4      8
+      5      8
+      6     12
+      7     26
       8     49
-      9     97
-     10    186
+      9     93
+     10    184
+     11    383
+     12    781
 
     bcryptjs (pure js, no deps)
     rounds  ms
-      4      6
+      4      7
       5      9
       6     16
-      7     31
-      8     60
-      9    113
+      7     29
+      8     55
+      9    114
+     10    224
+     11    454
+     12    910
 
     bcrypt (c++, has deps)
     rounds  ms
-      4      1
-      5      2
-      6      4
-      7     10
-      8     19
-      9     40
+      4      2
+      5      3
+      6      5
+      7     11
+      8     18
+      9     38
      10     75
-     11    153
+     11    150
+     12    301
+     13    607
 
 ## License
 
