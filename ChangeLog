@@ -1,3 +1,11 @@
+2015.03.07, Version 0.0.6
+
+* jshint
+* relicense from MIT to ISC
+* update README
+* browserify friendly (kumavis)
+
+
 2014.10.20, Version 0.0.5
 
 *  update example using updated twin-bcrypt
