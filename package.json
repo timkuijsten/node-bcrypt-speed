@@ -6,7 +6,7 @@
     "email": "tim@netsend.nl",
     "url": "https://github.com/timkuijsten"
   },
-  "license": "MIT",
+  "license": "ISC",
   "description": "Determine how many rounds can be used for a given maximum amount of login time",
   "keywords": [
     "bcrypt",
