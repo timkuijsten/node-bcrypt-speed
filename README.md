@@ -22,7 +22,7 @@ Any suggestions on other bcrypt implementations are welcome.
 
     $ node bcrypt-speed.js [maxtime]
 
-A maxtime is optional and defaults to 100ms. This should be the maximum time you
+A maxtime is optional and defaults to 500ms. This should be the maximum time you
 want to let your users wait while you're verifying their password.
 
 ## Example
