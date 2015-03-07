@@ -29,16 +29,13 @@ var start, duration, salt, hash, rounds;
 
 var tests = [];
 
-tests.push(idle, testBcryptNodejs)
-tests.push(idle, testTwinBcrypt)
-tests.push(idle, testBcryptjs)
-if (!process.browser) tests.push(idle, testBcrypt)
-
-async.series(tests);
+function idle(cb) {
+  setTimeout(cb, 200);
+}
 
 /////////////////////////////////////////////////////////////////////
 // bcrypt-nodejs
-function testBcryptNodejs(callback){
+function testBcryptNodejs(cb){
 
   rounds = 3;
 
@@ -54,11 +51,11 @@ function testBcryptNodejs(callback){
     console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
   } while (duration < maxDuration);
 
-  callback()
+  cb();
 }
 /////////////////////////////////////////////////////////////////////
 // twin-bcrypt
-function testTwinBcrypt(callback){
+function testTwinBcrypt(cb){
 
   rounds = 3;
 
@@ -74,11 +71,11 @@ function testTwinBcrypt(callback){
     console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
   } while (duration < maxDuration);
 
-  callback()
+  cb();
 }
 /////////////////////////////////////////////////////////////////////
 // bcryptjs
-function testBcryptjs(callback){
+function testBcryptjs(cb){
 
   rounds = 3;
 
@@ -94,11 +91,11 @@ function testBcryptjs(callback){
     console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
   } while (duration < maxDuration);
 
-  callback()
+  cb();
 }
 /////////////////////////////////////////////////////////////////////
 // bcrypt
-function testBcrypt(callback){
+function testBcrypt(cb){
 
   rounds = 3;
 
@@ -114,9 +111,12 @@ function testBcrypt(callback){
     console.log(('   ' + rounds).slice(-3), ('     ' + duration).slice(-6));
   } while (duration < maxDuration);
 
-  callback()
+  cb();
 }
 
-function idle(callback) {
-  setTimeout(callback, 200)
-}
+tests.push(idle, testBcryptNodejs);
+tests.push(idle, testTwinBcrypt);
+tests.push(idle, testBcryptjs);
+if (!process.browser) { tests.push(idle, testBcrypt); }
+
+async.series(tests);
