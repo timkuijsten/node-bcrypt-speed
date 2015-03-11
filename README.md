@@ -25,7 +25,7 @@ Remember, no hashing algorithm beats a good password, so consider [Diceware pass
 
     $ node bcrypt-speed.js [maxtime]
 
-A maxtime is optional and defaults to 500ms. This should be the maximum time you
+A maxtime is optional and defaults to 100ms. This should be the maximum time you
 want to let your users wait while you're verifying their password.
 
 ## Example
@@ -33,56 +33,46 @@ want to let your users wait while you're verifying their password.
 Example run on a 3 GHz core:
 
     $ node bcrypt-speed.js
-    test duration per number of rounds, up to 500ms
+    test duration per number of rounds, up to 100ms
 
     bcrypt-nodejs (pure js, no deps)
     rounds  ms
-      4      7
+      4      8
       5      9
-      6     17
-      7     33
-      8     58
-      9    112
-     10    219
-     11    440
-     12    873
+      6     15
+      7     31
+      8     53
+      9    108
 
     twin-bcrypt (pure js, no deps, asm.js)
     rounds  ms
       4      8
-      5      8
+      5      7
       6     12
       7     26
-      8     49
-      9     93
+      8     48
+      9     92
      10    184
-     11    383
-     12    781
 
     bcryptjs (pure js, no deps)
     rounds  ms
-      4      7
-      5      9
+      4      9
+      5      8
       6     16
-      7     29
-      8     55
+      7     32
+      8     57
       9    114
-     10    224
-     11    454
-     12    910
 
     bcrypt (c++, has deps)
     rounds  ms
-      4      2
+      4      1
       5      3
       6      5
-      7     11
+      7      9
       8     18
       9     38
-     10     75
+     10     76
      11    150
-     12    301
-     13    607
 
 ## Further reading
 

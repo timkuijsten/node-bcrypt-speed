@@ -22,7 +22,7 @@ var bcryptjs = require('bcryptjs');
 var bcrypt = require('bcrypt');
 var async = require('async');
 
-var maxDuration = Number(process.argv[2]) || 500;
+var maxDuration = Number(process.argv[2]) || 100;
 console.log('test duration per number of rounds, up to ' + maxDuration + 'ms');
 
 var start, duration, salt, hash, rounds;
