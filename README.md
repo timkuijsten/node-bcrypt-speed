@@ -1,14 +1,15 @@
 # bcrypt-speed
 
-Determine the maximum level of security for some hardware given the maximum time
+Determine the maximum level of rounds for some hardware given the maximum time
 that can be spent on login.
 
 Using a fixed amount of time (and thus having an assured user experience) this
 module runs a couple of different bcrypt implementations so that the optimum
 number of rounds can be found given some hardware and the time that a login 
-may take (i.e. Apple uses 80ms for unlocking [*](http://www.darthnull.org/2014/10/06/ios-encryption)).
+may take (i.e. Apple uses [80ms for unlocking](http://www.darthnull.org/2014/10/06/ios-encryption)).
 
-Note: this package should be run on the target production hardware to get a good estimate.
+Note: this package should be run on the target production hardware to get a good
+estimate.
 
 The following packages are currently tested:
 * [bcrypt-nodejs](https://www.npmjs.org/package/bcrypt-nodejs) (pure js, no deps)
@@ -17,6 +18,8 @@ The following packages are currently tested:
 * [bcrypt](https://www.npmjs.org/package/bcrypt) (c++, has deps)
 
 Any suggestions on other bcrypt implementations are welcome.
+
+Remember, no hashing algorithm beats a good password, so consider [Diceware passphrases](http://world.std.com/~reinhold/diceware.html).
 
 ## Usage
 
@@ -80,6 +83,12 @@ Example run on a 3 GHz core:
      11    150
      12    301
      13    607
+
+## Further reading
+
+Discussion about bcrypt, password cracking speed and Diceware passphrases:
+* https://github.com/freedomofpress/securedrop/issues/180#issuecomment-29680658
+* https://github.com/freedomofpress/securedrop/issues/180#issuecomment-29665663
 
 ## License
 
