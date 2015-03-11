@@ -19,7 +19,7 @@ The following packages are currently tested:
 
 Any suggestions on other bcrypt implementations are welcome.
 
-Remember, no hashing algorithm beats a good password, so consider [Diceware passphrases](http://world.std.com/~reinhold/diceware.html).
+Remember, even [MD4 would be sufficient](https://github.com/freedomofpress/securedrop/issues/180#issuecomment-29760395) when using a strong password, so consider using a [Diceware passphrase](http://world.std.com/~reinhold/diceware.html).
 
 ## Usage
 
@@ -77,8 +77,8 @@ Example run on a 3 GHz core:
 ## Further reading
 
 Discussion about bcrypt, password cracking speed and Diceware passphrases:
-* https://github.com/freedomofpress/securedrop/issues/180#issuecomment-29680658
-* https://github.com/freedomofpress/securedrop/issues/180#issuecomment-29665663
+* <https://github.com/freedomofpress/securedrop/issues/180#issuecomment-29680658>
+* <https://github.com/freedomofpress/securedrop/issues/180#issuecomment-29665663>
 
 ## License
 
